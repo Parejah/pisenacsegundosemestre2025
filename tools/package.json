@@ -1,0 +1,13 @@
+{
+  "name": "pisenacsegundosemestre2025",
+  "version": "1.0.0",
+  "description": "E-commerce acessível - PI 2ª Entrega - SENAC 2025",
+  "scripts": {
+    "serve": "python -m http.server 8000",
+    "validate-html": "html-validate src/*.html",
+    "lint-css": "stylelint 'src/css/*.css'",
+    "accessibility": "pa11y src/*.html"
+  },
+  "keywords": ["ecommerce", "accessibility", "web", "senac", "pi"],
+  "author": "Equipe PI SENAC 2025"
+}
