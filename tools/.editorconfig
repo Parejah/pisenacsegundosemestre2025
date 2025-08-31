@@ -1,0 +1,21 @@
+root = true                    ← Este é o arquivo principal
+
+[*]                           ← Para TODOS os arquivos
+charset = utf-8               ← Usar UTF-8 (acentos funcionam)
+end_of_line = lf             ← Tipo de quebra de linha
+insert_final_newline = true   ← Sempre pular linha no final
+trim_trailing_whitespace = true ← Remover espaços no final
+indent_style = space          ← Usar espaços (não TAB)
+indent_size = 2              ← 2 espaços para cada nível
+
+[*.md]                       ← Só para arquivos .md (markdown)
+trim_trailing_whitespace = false ← Markdown precisa de espaços
+
+[*.html]                     ← Só para arquivos HTML
+indent_size = 2              ← 2 espaços
+
+[*.css]                      ← Só para arquivos CSS  
+indent_size = 2              ← 2 espaços
+
+[*.js]                       ← Só para arquivos JavaScript
+indent_size = 2              ← 2 espaços
