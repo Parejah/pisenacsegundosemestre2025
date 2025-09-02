@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Produto</title>
+</head>
+<body>
+  <header>
+    <h1>Produto</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Início</a></li>
+        <li><a href="catalogo.html">Catálogo</a></li>
+        <li><a href="produto.html">Produto</a></li>
+        <li><a href="carrinho.html">Carrinho</a></li>
+        <li><a href="ajuda.html">Ajuda</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section>
+      <h2>Área Visual</h2>
+      <img src="produto.jpg" alt="Imagem do produto">
+    </section>
+
+    <aside>
+      <h2>Painel Lateral</h2>
+      <p>Preço, descrição, especificações</p>
+      <button>Adicionar ao Carrinho</button>
+    </aside>
+  </main>
+</body>
+</html> 

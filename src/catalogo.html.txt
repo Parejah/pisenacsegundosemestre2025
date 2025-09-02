@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Catálogo de Produtos - Loja Acessível</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Catálogo de Produtos</h1>
+    <nav aria-label="Menu principal">
+      <ul>
+        <li><a href="index.html">Início</a></li>
+        <li><a href="catalogo.html">Catálogo</a></li>
+        <li><a href="carrinho.html">Carrinho</a></li>
+        <li><a href="ajuda.html">Ajuda</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section aria-label="Filtros de categoria" class="filtros">
+      <h2>Filtrar por categoria</h2>
+      <button data-filter="todos">Todos</button>
+      <button data-filter="caes">Cães</button>
+      <button data-filter="gatos">Gatos</button>
+      <button data-filter="promocoes">Promoções</button>
+    </section>
+
+    <section aria-label="Lista de produtos" class="produtos">
+      <article class="card-produto" data-category="caes">
+        <img src="img/produto1.jpg" alt="Brinquedo para cães">
+        <h3>Brinquedo para Cães</h3>
+        <p>R$29,90</p>
+        <button>Adicionar ao Carrinho</button>
+      </article>
+      <article class="card-produto" data-category="gatos">
+        <img src="img/produto2.jpg" alt="Arranhador para gatos">
+        <h3>Arranhador para Gatos</h3>
+        <p>R$59,90</p>
+        <button>Adicionar ao Carrinho</button>
+      </article>
+      <article class="card-produto" data-category="promocoes">
+        <img src="img/produto3.jpg" alt="Ração em promoção">
+        <h3>Ração Premium</h3>
+        <p>R$89,90</p>
+        <button>Adicionar ao Carrinho</button>
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Loja Acessível</p>
+    <nav aria-label="Links de rodapé">
+      <ul>
+        <li><a href="contato.html">Contato</a></li>
+        <li><a href="politica.html">Política de Privacidade</a></li>
+      </ul>
+    </nav>
+  </footer>
+
+  <script src="filtro-categorias.js"></script>
+</body>
+</html>

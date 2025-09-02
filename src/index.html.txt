@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Loja Acessível - Página Inicial</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; max-width: 1200px; margin: auto; }
+    header, footer { background-color: #0097A7; color: white; padding: 1em; }
+    nav ul { list-style: none; display: flex; gap: 1em; padding: 0; }
+    nav ul li a { color: white; text-decoration: none; }
+    .banner, .promocoes, .grid-produtos { margin: 1em 0; }
+    .banner-item, .card-produto { border: 1px solid #ccc; padding: 1em; margin: 0.5em; }
+    .grid-produtos { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1em; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Loja Acessível</h1>
+    <nav aria-label="Menu principal">
+      <ul>
+        <li><a href="index.html">Início</a></li>
+        <li><a href="catalogo.html">Catálogo</a></li>
+        <li><a href="produto.html">Produto</a></li>
+        <li><a href="carrinho.html">Carrinho</a></li>
+        <li><a href="ajuda.html">Ajuda</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="intro">
+      <p><strong>Bem-vindo à Loja Acessível: uma experiência de compra eficiente, prática e pensada para todos.</strong></p>
+    </section>
+
+    <section class="banner">
+      <h2>Banner Principal</h2>
+      <div class="banner-item">
+        <p>Promoções e informações importantes</p>
+      </div>
+    </section>
+
+    <section class="grid-produtos">
+      <h2>Grid de Produtos</h2>
+      <div class="card-produto">
+        <p>Produto 1</p>
+      </div>
+      <div class="card-produto">
+        <p>Produto 2</p>
+      </div>
+    </section>
+
+    <section class="promocoes">
+      <h2>Área Promocional</h2>
+      <p>Ofertas especiais e banners</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Loja Acessível</p>
+  </footer>
+</body>
+</html>
