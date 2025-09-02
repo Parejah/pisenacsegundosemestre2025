@@ -1,63 +1,144 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Loja Acessível - Página Inicial</title>
-  <style>
-    body { font-family: Arial, sans-serif; margin: 0; padding: 0; max-width: 1200px; margin: auto; }
-    header, footer { background-color: #0097A7; color: white; padding: 1em; }
-    nav ul { list-style: none; display: flex; gap: 1em; padding: 0; }
-    nav ul li a { color: white; text-decoration: none; }
-    .banner, .promocoes, .grid-produtos { margin: 1em 0; }
-    .banner-item, .card-produto { border: 1px solid #ccc; padding: 1em; margin: 0.5em; }
-    .grid-produtos { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1em; }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loja Acessível - Página Inicial</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1200px;
+            margin: auto;
+            line-height: 1.6;
+        }
+
+        header, footer {
+            background-color: #0097A7;
+            color: white;
+            padding: 1em;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 1em;
+            padding: 0;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        .banner, .promocoes, .grid-produtos {
+            margin: 1em 0;
+        }
+
+        .banner-item, .card-produto {
+            border: 1px solid #ccc;
+            padding: 1em;
+            margin: 0.5em;
+        }
+
+        .grid-produtos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1em;
+        }
+
+        .card-produto {
+            text-align: center;
+            background-color: #f9f9f9;
+        }
+
+        .card-produto img {
+            max-width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .intro {
+            text-align: center;
+            margin: 2em 0;
+        }
+
+        .banner {
+            background-color: #f0f8ff;
+            padding: 2em;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <h1>Loja Acessível</h1>
-    <nav aria-label="Menu principal">
-      <ul>
-        <li><a href="index.html">Início</a></li>
-        <li><a href="catalogo.html">Catálogo</a></li>
-        <li><a href="produto.html">Produto</a></li>
-        <li><a href="carrinho.html">Carrinho</a></li>
-        <li><a href="ajuda.html">Ajuda</a></li>
-      </ul>
-    </nav>
-  </header>
+    <header>
+        <h1>Loja Acessível</h1>
+        <nav aria-label="Menu principal">
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="catalogo.html">Catálogo</a></li>
+                <li><a href="produto.html">Produto</a></li>
+                <li><a href="carrinho.html">Carrinho</a></li>
+                <li><a href="contato.html">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
 
-  <main>
-    <section class="intro">
-      <p><strong>Bem-vindo à Loja Acessível: uma experiência de compra eficiente, prática e pensada para todos.</strong></p>
-    </section>
+    <main>
+        <section class="intro">
+            <p><strong>Bem-vindo à Loja Acessível: uma experiência de compra eficiente, prática e pensada para todos.</strong></p>
+        </section>
 
-    <section class="banner">
-      <h2>Banner Principal</h2>
-      <div class="banner-item">
-        <p>Promoções e informações importantes</p>
-      </div>
-    </section>
+        <section class="banner">
+            <h2>Banner Principal</h2>
+            <div class="banner-item">
+                <h3>Promoção e Informações Importantes</h3>
+                <p>Descubra nossas ofertas especiais e produtos em destaque!</p>
+            </div>
+        </section>
 
-    <section class="grid-produtos">
-      <h2>Grid de Produtos</h2>
-      <div class="card-produto">
-        <p>Produto 1</p>
-      </div>
-      <div class="card-produto">
-        <p>Produto 2</p>
-      </div>
-    </section>
+        <section class="promocoes">
+            <h2>Produtos em Destaque</h2>
+            <div class="grid-produtos">
+                <div class="card-produto">
+                    <img src="https://via.placeholder.com/200x200?text=Produto+1" alt="Produto 1">
+                    <h3>Produto 1</h3>
+                    <p>R$ 99,90</p>
+                    <button>Ver Detalhes</button>
+                </div>
+                <div class="card-produto">
+                    <img src="https://via.placeholder.com/200x200?text=Produto+2" alt="Produto 2">
+                    <h3>Produto 2</h3>
+                    <p>R$ 149,90</p>
+                    <button>Ver Detalhes</button>
+                </div>
+                <div class="card-produto">
+                    <img src="https://via.placeholder.com/200x200?text=Produto+3" alt="Produto 3">
+                    <h3>Produto 3</h3>
+                    <p>R$ 79,90</p>
+                    <button>Ver Detalhes</button>
+                </div>
+                <div class="card-produto">
+                    <img src="https://via.placeholder.com/200x200?text=Produto+4" alt="Produto 4">
+                    <h3>Produto 4</h3>
+                    <p>R$ 199,90</p>
+                    <button>Ver Detalhes</button>
+                </div>
+            </div>
+        </section>
+    </main>
 
-    <section class="promocoes">
-      <h2>Área Promocional</h2>
-      <p>Ofertas especiais e banners</p>
-    </section>
-  </main>
-
-  <footer>
-    <p>&copy; 2025 Loja Acessível</p>
-  </footer>
+    <footer>
+        <p>&copy; 2025 Loja Acessível. Todos os direitos reservados.</p>
+    </footer>
 </body>
-</html>
+</html> 
