@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Produto - Loja Acessível</title>
+    <title>Carrinho de Compras - Loja Acessível</title>
     <style>
         * {
             margin: 0;
@@ -42,61 +42,143 @@
 
         main {
             padding: 2em 1em;
+            min-height: 60vh;
         }
 
-        .produto-container {
+        .carrinho-container {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 2fr 1fr;
             gap: 2em;
-            margin-bottom: 2em;
         }
 
-        .produto-imagem img {
-            width: 100%;
-            max-width: 400px;
+        .itens-carrinho {
+            background-color: #f9f9f9;
+            padding: 1.5em;
             border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         }
 
-        .produto-info h1 {
+        .resumo-pedido {
+            background-color: #f9f9f9;
+            padding: 1.5em;
+            border-radius: 8px;
+            height: fit-content;
+        }
+
+        .item-carrinho {
+            display: grid;
+            grid-template-columns: 100px 1fr auto auto auto;
+            gap: 1em;
+            align-items: center;
+            padding: 1em 0;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .item-carrinho:last-child {
+            border-bottom: none;
+        }
+
+        .item-imagem img {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 4px;
+        }
+
+        .item-info h4 {
+            margin-bottom: 0.5em;
             color: #333;
-            margin-bottom: 1em;
         }
 
-        .preco {
-            font-size: 2em;
-            color: #0097A7;
+        .item-info p {
+            color: #666;
+            font-size: 0.9em;
+        }
+
+        .quantidade-controle {
+            display: flex;
+            align-items: center;
+            gap: 0.5em;
+        }
+
+        .quantidade-controle button {
+            background-color: #0097A7;
+            color: white;
+            border: none;
+            width: 30px;
+            height: 30px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .quantidade-controle button:hover {
+            background-color: #007d8a;
+        }
+
+        .quantidade-controle span {
+            min-width: 30px;
+            text-align: center;
+        }
+
+        .preco-item {
             font-weight: bold;
-            margin-bottom: 1em;
+            color: #0097A7;
         }
 
-        .descricao {
-            margin-bottom: 2em;
+        .remover-item {
+            background: none;
+            border: none;
+            color: #dc3545;
+            cursor: pointer;
+            font-size: 1.2em;
+            padding: 0.5em;
+        }
+
+        .remover-item:hover {
+            color: #a02834;
+        }
+
+        .carrinho-vazio {
+            text-align: center;
+            padding: 3em;
             color: #666;
         }
 
-        .opcoes {
-            margin-bottom: 2em;
-        }
-
-        .opcoes label {
-            display: block;
-            margin-bottom: 0.5em;
-            font-weight: bold;
-        }
-
-        .opcoes select, .opcoes input {
-            width: 100%;
-            padding: 0.5em;
-            border: 1px solid #ddd;
-            border-radius: 4px;
+        .carrinho-vazio img {
+            width: 100px;
+            opacity: 0.5;
             margin-bottom: 1em;
         }
 
-        .botoes {
+        .resumo-linha {
             display: flex;
-            gap: 1em;
-            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-bottom: 0.5em;
+        }
+
+        .resumo-linha.total {
+            font-weight: bold;
+            font-size: 1.2em;
+            color: #0097A7;
+            border-top: 1px solid #ddd;
+            padding-top: 0.5em;
+            margin-top: 1em;
+        }
+
+        .cupom-desconto {
+            margin: 1em 0;
+        }
+
+        .cupom-desconto input {
+            padding: 0.5em;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            margin-right: 0.5em;
+            flex: 1;
+        }
+
+        .cupom-form {
+            display: flex;
+            gap: 0.5em;
         }
 
         .btn {
@@ -113,6 +195,7 @@
         .btn-primary {
             background-color: #0097A7;
             color: white;
+            width: 100%;
         }
 
         .btn-primary:hover {
@@ -120,86 +203,40 @@
         }
 
         .btn-secondary {
-            background-color: #f0f0f0;
-            color: #333;
+            background-color: #6c757d;
+            color: white;
         }
 
         .btn-secondary:hover {
-            background-color: #e0e0e0;
+            background-color: #5a6268;
         }
 
-        .especificacoes {
-            margin-top: 2em;
-            padding: 1em;
-            background-color: #f9f9f9;
-            border-radius: 8px;
-        }
-
-        .especificacoes h3 {
-            margin-bottom: 1em;
-            color: #333;
-        }
-
-        .especificacoes ul {
-            list-style-type: disc;
-            margin-left: 2em;
-        }
-
-        .especificacoes li {
-            margin-bottom: 0.5em;
-        }
-
-        .produtos-relacionados {
-            margin-top: 3em;
-        }
-
-        .produtos-relacionados h3 {
-            margin-bottom: 1em;
-            color: #333;
-        }
-
-        .grid-relacionados {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1em;
-        }
-
-        .card-relacionado {
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            padding: 1em;
+        .continuar-comprando {
+            margin-top: 1em;
             text-align: center;
-            background-color: #f9f9f9;
         }
 
-        .card-relacionado img {
-            width: 100%;
-            height: 150px;
-            object-fit: cover;
-            border-radius: 4px;
-            margin-bottom: 0.5em;
-        }
-
-        .breadcrumb {
-            margin-bottom: 1em;
-            color: #666;
-        }
-
-        .breadcrumb a {
+        .continuar-comprando a {
             color: #0097A7;
             text-decoration: none;
         }
 
-        .breadcrumb a:hover {
+        .continuar-comprando a:hover {
             text-decoration: underline;
         }
 
         @media (max-width: 768px) {
-            .produto-container {
+            .carrinho-container {
                 grid-template-columns: 1fr;
             }
-            
-            .botoes {
+
+            .item-carrinho {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 0.5em;
+            }
+
+            .cupom-form {
                 flex-direction: column;
             }
         }
@@ -220,85 +257,107 @@
     </header>
 
     <main>
-        <nav class="breadcrumb" aria-label="Navegação estrutural">
-            <a href="index.html">Início</a> > 
-            <a href="catalogo.html">Catálogo</a> > 
-            <span>Brinquedo para Cães</span>
-        </nav>
+        <h2>Carrinho de Compras</h2>
 
-        <div class="produto-container">
-            <div class="produto-imagem">
-                <img src="https://via.placeholder.com/400x400?text=Brinquedo+para+Cães" alt="Brinquedo interativo para cães de todas as idades">
-            </div>
-
-            <div class="produto-info">
-                <h1>Brinquedo Interativo para Cães</h1>
-                <div class="preco">R$ 29,90</div>
+        <div class="carrinho-container">
+            <div class="itens-carrinho">
+                <h3>Seus Itens</h3>
                 
-                <div class="descricao">
-                    <p>Brinquedo resistente e seguro, perfeito para estimular a mente do seu pet. Feito com materiais atóxicos e duráveis, proporciona horas de diversão para cães de todos os tamanhos.</p>
+                <div id="itens-lista">
+                    <div class="item-carrinho">
+                        <div class="item-imagem">
+                            <img src="https://via.placeholder.com/80x80?text=Brinquedo" alt="Brinquedo para cães">
+                        </div>
+                        <div class="item-info">
+                            <h4>Brinquedo Interativo</h4>
+                            <p>Tamanho: Médio | Cor: Azul</p>
+                        </div>
+                        <div class="quantidade-controle">
+                            <button onclick="alterarQuantidade(1, -1)">-</button>
+                            <span id="qtd-1">2</span>
+                            <button onclick="alterarQuantidade(1, 1)">+</button>
+                        </div>
+                        <div class="preco-item">R$ 59,80</div>
+                        <button class="remover-item" onclick="removerItem(1)" title="Remover item">
+                            ✕
+                        </button>
+                    </div>
+
+                    <div class="item-carrinho">
+                        <div class="item-imagem">
+                            <img src="https://via.placeholder.com/80x80?text=Coleira" alt="Coleira para cães">
+                        </div>
+                        <div class="item-info">
+                            <h4>Coleira Colorida</h4>
+                            <p>Tamanho: Médio | Cor: Verde</p>
+                        </div>
+                        <div class="quantidade-controle">
+                            <button onclick="alterarQuantidade(2, -1)">-</button>
+                            <span id="qtd-2">1</span>
+                            <button onclick="alterarQuantidade(2, 1)">+</button>
+                        </div>
+                        <div class="preco-item">R$ 19,90</div>
+                        <button class="remover-item" onclick="removerItem(2)" title="Remover item">
+                            ✕
+                        </button>
+                    </div>
+
+                    <div class="item-carrinho">
+                        <div class="item-imagem">
+                            <img src="https://via.placeholder.com/80x80?text=Ração" alt="Ração premium">
+                        </div>
+                        <div class="item-info">
+                            <h4>Ração Premium</h4>
+                            <p>Peso: 15kg | Sabor: Frango</p>
+                        </div>
+                        <div class="quantidade-controle">
+                            <button onclick="alterarQuantidade(3, -1)">-</button>
+                            <span id="qtd-3">1</span>
+                            <button onclick="alterarQuantidade(3, 1)">+</button>
+                        </div>
+                        <div class="preco-item">R$ 89,90</div>
+                        <button class="remover-item" onclick="removerItem(3)" title="Remover item">
+                            ✕
+                        </button>
+                    </div>
                 </div>
 
-                <div class="opcoes">
-                    <label for="tamanho">Tamanho:</label>
-                    <select id="tamanho" name="tamanho">
-                        <option value="pequeno">Pequeno</option>
-                        <option value="medio" selected>Médio</option>
-                        <option value="grande">Grande</option>
-                    </select>
-
-                    <label for="cor">Cor:</label>
-                    <select id="cor" name="cor">
-                        <option value="azul" selected>Azul</option>
-                        <option value="vermelho">Vermelho</option>
-                        <option value="verde">Verde</option>
-                    </select>
-
-                    <label for="quantidade">Quantidade:</label>
-                    <input type="number" id="quantidade" name="quantidade" min="1" max="10" value="1">
-                </div>
-
-                <div class="botoes">
-                    <button class="btn btn-primary" onclick="adicionarAoCarrinho()">
-                        Adicionar ao Carrinho
-                    </button>
-                    <button class="btn btn-secondary" onclick="comprarAgora()">
-                        Comprar Agora
-                    </button>
+                <div class="continuar-comprando">
+                    <a href="catalogo.html">← Continuar Comprando</a>
                 </div>
             </div>
-        </div>
 
-        <div class="especificacoes">
-            <h3>Especificações do Produto</h3>
-            <ul>
-                <li><strong>Material:</strong> Borracha natural atóxica</li>
-                <li><strong>Dimensões:</strong> 15cm x 10cm x 8cm</li>
-                <li><strong>Peso:</strong> 150g</li>
-                <li><strong>Idade recomendada:</strong> A partir de 3 meses</li>
-                <li><strong>Cuidados:</strong> Lavar com água e sabão neutro</li>
-                <li><strong>Garantia:</strong> 6 meses contra defeitos de fabricação</li>
-            </ul>
-        </div>
+            <div class="resumo-pedido">
+                <h3>Resumo do Pedido</h3>
+                
+                <div class="cupom-desconto">
+                    <label for="cupom">Cupom de Desconto:</label>
+                    <div class="cupom-form">
+                        <input type="text" id="cupom" placeholder="Digite o código">
+                        <button class="btn btn-secondary" onclick="aplicarCupom()">Aplicar</button>
+                    </div>
+                </div>
 
-        <div class="produtos-relacionados">
-            <h3>Produtos Relacionados</h3>
-            <div class="grid-relacionados">
-                <div class="card-relacionado">
-                    <img src="https://via.placeholder.com/200x150?text=Coleira" alt="Coleira para cães">
-                    <h4>Coleira Colorida</h4>
-                    <p>R$ 19,90</p>
+                <div class="resumo-linha">
+                    <span>Subtotal:</span>
+                    <span id="subtotal">R$ 169,60</span>
                 </div>
-                <div class="card-relacionado">
-                    <img src="https://via.placeholder.com/200x150?text=Ração" alt="Ração premium">
-                    <h4>Ração Premium</h4>
-                    <p>R$ 89,90</p>
+                <div class="resumo-linha">
+                    <span>Frete:</span>
+                    <span id="frete">R$ 15,00</span>
                 </div>
-                <div class="card-relacionado">
-                    <img src="https://via.placeholder.com/200x150?text=Petisco" alt="Petisco para cães">
-                    <h4>Petisco Natural</h4>
-                    <p>R$ 15,90</p>
+                <div class="resumo-linha" id="desconto-linha" style="display: none;">
+                    <span>Desconto:</span>
+                    <span id="desconto">R$ 0,00</span>
                 </div>
+                <div class="resumo-linha total">
+                    <span>Total:</span>
+                    <span id="total">R$ 184,60</span>
+                </div>
+
+                <button class="btn btn-primary" onclick="finalizarCompra()">
+                    Finalizar Compra
+                </button>
             </div>
         </div>
     </main>
@@ -314,21 +373,107 @@
     </footer>
 
     <script>
-        function adicionarAoCarrinho() {
-            const tamanho = document.getElementById('tamanho').value;
-            const cor = document.getElementById('cor').value;
-            const quantidade = document.getElementById('quantidade').value;
-            
-            alert(`Produto adicionado ao carrinho!\nTamanho: ${tamanho}\nCor: ${cor}\nQuantidade: ${quantidade}`);
+        // Dados dos produtos no carrinho
+        let carrinho = [
+            { id: 1, nome: 'Brinquedo Interativo', preco: 29.90, quantidade: 2 },
+            { id: 2, nome: 'Coleira Colorida', preco: 19.90, quantidade: 1 },
+            { id: 3, nome: 'Ração Premium', preco: 89.90, quantidade: 1 }
+        ];
+
+        function alterarQuantidade(id, mudanca) {
+            const item = carrinho.find(item => item.id === id);
+            if (item) {
+                item.quantidade += mudanca;
+                if (item.quantidade <= 0) {
+                    item.quantidade = 1;
+                }
+                document.getElementById(`qtd-${id}`).textContent = item.quantidade;
+                atualizarResumo();
+            }
         }
 
-        function comprarAgora() {
-            const tamanho = document.getElementById('tamanho').value;
-            const cor = document.getElementById('cor').value;
-            const quantidade = document.getElementById('quantidade').value;
-            
-            alert(`Redirecionando para checkout...\nTamanho: ${tamanho}\nCor: ${cor}\nQuantidade: ${quantidade}`);
+        function removerItem(id) {
+            if (confirm('Tem certeza que deseja remover este item?')) {
+                carrinho = carrinho.filter(item => item.id !== id);
+                document.querySelector(`#qtd-${id}`).closest('.item-carrinho').remove();
+                atualizarResumo();
+                
+                if (carrinho.length === 0) {
+                    mostrarCarrinhoVazio();
+                }
+            }
         }
+
+        function atualizarResumo() {
+            const subtotal = carrinho.reduce((total, item) => total + (item.preco * item.quantidade), 0);
+            const frete = subtotal > 100 ? 0 : 15;
+            const desconto = parseFloat(document.getElementById('desconto').textContent.replace('R$ ', '').replace(',', '.')) || 0;
+            const total = subtotal + frete - desconto;
+
+            document.getElementById('subtotal').textContent = `R$ ${subtotal.toFixed(2).replace('.', ',')}`;
+            document.getElementById('frete').textContent = frete === 0 ? 'Grátis' : `R$ ${frete.toFixed(2).replace('.', ',')}`;
+            document.getElementById('total').textContent = `R$ ${total.toFixed(2).replace('.', ',')}`;
+        }
+
+        function aplicarCupom() {
+            const cupom = document.getElementById('cupom').value.toUpperCase();
+            const descontoLinha = document.getElementById('desconto-linha');
+            const descontoSpan = document.getElementById('desconto');
+
+            let desconto = 0;
+            
+            switch(cupom) {
+                case 'DESCONTO10':
+                    desconto = 16.96; // 10% do subtotal
+                    alert('Cupom aplicado! 10% de desconto');
+                    break;
+                case 'FRETE15':
+                    desconto = 15;
+                    alert('Cupom aplicado! R$ 15 de desconto');
+                    break;
+                case 'BEMVINDO':
+                    desconto = 25;
+                    alert('Cupom aplicado! R$ 25 de desconto');
+                    break;
+                default:
+                    alert('Cupom inválido');
+                    desconto = 0;
+            }
+
+            if (desconto > 0) {
+                descontoSpan.textContent = `R$ ${desconto.toFixed(2).replace('.', ',')}`;
+                descontoLinha.style.display = 'flex';
+            } else {
+                descontoLinha.style.display = 'none';
+            }
+
+            atualizarResumo();
+        }
+
+        function mostrarCarrinhoVazio() {
+            document.querySelector('.itens-carrinho').innerHTML = `
+                <div class="carrinho-vazio">
+                    <img src="https://via.placeholder.com/100x100?text=🛒" alt="Carrinho vazio">
+                    <h3>Seu carrinho está vazio</h3>
+                    <p>Adicione produtos e eles aparecerão aqui</p>
+                    <a href="catalogo.html" class="btn btn-primary" style="display: inline-block; margin-top: 1em;">
+                        Ver Produtos
+                    </a>
+                </div>
+            `;
+        }
+
+        function finalizarCompra() {
+            if (carrinho.length === 0) {
+                alert('Seu carrinho está vazio!');
+                return;
+            }
+            
+            alert('Redirecionando para o checkout...\n\nEm breve você poderá finalizar sua compra!');
+        }
+
+        // Inicializar resumo
+        atualizarResumo();
     </script>
 </body>
 </html> 
