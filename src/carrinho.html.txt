@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Carrinho de Compras</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Carrinho de Compras</h1>
+  </header>
+  <main>
+    <section>
+      <p>Etapa 1: Itens no carrinho</p>
+      <p>Etapa 2: Informações de entrega</p>
+      <p>Etapa 3: Pagamento</p>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2025 Loja Acessível</p>
+  </footer>
+</body>
+</html>
