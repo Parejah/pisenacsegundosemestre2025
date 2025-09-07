@@ -1,0 +1,70 @@
+/* CSS Reset - Remove estilos padrão dos navegadores */
+
+/* Faz com que todos os elementos tenham a mesma base */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* Remove margens e espaços em branco de todos os elementos */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* Configurações básicas para a página */
+html {
+  font-size: 16px; /* Tamanho base da fonte */
+  scroll-behavior: smooth; /* Rolagem suave */
+}
+
+body {
+  line-height: 1.6; /* Espaçamento entre linhas */
+  font-family: 'Arial', sans-serif; /* Fonte padrão */
+  color: #333; /* Cor do texto */
+  background-color: #fff; /* Cor de fundo */
+}
+
+/* Remove estilos dos títulos */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal;
+  line-height: 1.2;
+}
+
+/* Remove pontos das listas */
+ul, ol {
+  list-style: none;
+}
+
+/* Remove sublinhado dos links */
+a {
+  text-decoration: none;
+  color: inherit; /* Herda a cor do elemento pai */
+}
+
+/* Remove estilos dos botões */
+button {
+  border: none;
+  background: none;
+  font: inherit;
+  cursor: pointer; /* Cursor de mãozinha */
+}
+
+/* Remove estilos dos campos de formulário */
+input, textarea, select {
+  font: inherit;
+  border: none;
+  outline: none;
+}
+
+/* Torna as imagens responsivas */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Remove estilos das tabelas */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
