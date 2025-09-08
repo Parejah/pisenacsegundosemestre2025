@@ -4,252 +4,282 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Loja Acessível - Página Inicial</title>
-    
-    <!-- Links para os arquivos CSS -->
+    <!-- Links para seus arquivos CSS -->
     <link rel="stylesheet" href="css/variaveis.css">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/componentes.css">
     <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/cores.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/responsivo.css">
+    <link rel="stylesheet" href="css/tipografia.css">
     
-    <!-- Estilos específicos desta página -->
     <style>
-        /* Seção Hero */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1200px;
+            margin: auto;
+            line-height: 1.6;
+        }
+
+        header, footer {
+            background-color: #0097A7;
+            color: white;
+            padding: 1em;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 1em;
+            padding: 0;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        main {
+            padding: 2em 1em;
+        }
+
         .hero {
             text-align: center;
-            background: linear-gradient(135deg, var(--cor-azul), var(--cor-azul-claro));
-            color: var(--texto-branco);
-            padding: var(--espaco-grande);
-            margin-bottom: var(--espaco-grande);
-            border-radius: 0 0 var(--borda-grande) var(--borda-grande);
+            background: linear-gradient(135deg, #0097A7, #00BCD4);
+            color: white;
+            padding: 3em 1em;
+            margin: -2em -1em 2em -1em;
+            border-radius: 0 0 20px 20px;
         }
 
-        .hero-titulo {
-            font-size: var(--fonte-extra-grande);
-            margin-bottom: var(--espaco-normal);
-            font-weight: var(--fonte-negrito);
+        .hero h2 {
+            font-size: 2.5em;
+            margin-bottom: 0.5em;
         }
 
-        .hero-texto {
-            font-size: var(--fonte-media);
+        .hero p {
+            font-size: 1.2em;
             max-width: 600px;
             margin: 0 auto;
-            line-height: var(--linha-altura-texto);
         }
 
-        /* Grid de produtos */
-        .produtos-grid {
+        .secao-destaque {
+            margin-bottom: 3em;
+        }
+
+        .secao-destaque h3 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 2em;
+            font-size: 2em;
+        }
+
+        .produtos-destaque {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: var(--espaco-grande);
-            margin-bottom: var(--espaco-grande);
+            gap: 2em;
         }
 
-        /* Seção CTA */
-        .cta-section {
-            background: var(--fundo-azul-claro);
-            padding: var(--espaco-grande);
-            border-radius: var(--borda-normal);
+        .card-produto {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 1.5em;
             text-align: center;
-            border-left: 4px solid var(--cor-azul);
+            background-color: #f9f9f9;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
-        .cta-titulo {
-            color: var(--cor-azul);
-            margin-bottom: var(--espaco-normal);
-            font-size: var(--fonte-grande);
-            font-weight: var(--fonte-semi-negrito);
+        .card-produto:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 151, 167, 0.2);
         }
 
-        .cta-texto {
-            color: var(--texto-medio);
-            margin-bottom: var(--espaco-normal);
-            font-size: var(--fonte-normal);
+        .card-produto img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 4px;
+            margin-bottom: 1em;
         }
 
-        /* Responsividade */
+        .card-produto h4 {
+            margin-bottom: 0.5em;
+            color: #333;
+            font-size: 1.3em;
+        }
+
+        .card-produto p {
+            margin-bottom: 0.5em;
+            color: #666;
+        }
+
+        .card-produto .preco {
+            font-size: 1.4em;
+            font-weight: bold;
+            color: #0097A7;
+            margin: 1em 0;
+        }
+
+        .card-produto button {
+            background-color: #0097A7;
+            color: white;
+            border: none;
+            padding: 0.75em 1.5em;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background-color 0.3s ease;
+        }
+
+        .card-produto button:hover {
+            background-color: #007d8a;
+        }
+
+        .cta-section {
+            background-color: #f0f8ff;
+            padding: 2em;
+            border-radius: 8px;
+            text-align: center;
+            margin-top: 3em;
+        }
+
+        .cta-section h3 {
+            color: #0097A7;
+            margin-bottom: 1em;
+        }
+
+        .cta-button {
+            background-color: #0097A7;
+            color: white;
+            text-decoration: none;
+            padding: 1em 2em;
+            border-radius: 4px;
+            display: inline-block;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #007d8a;
+        }
+
+        footer nav ul {
+            justify-content: center;
+            margin-top: 1em;
+        }
+
         @media (max-width: 768px) {
-            .hero-titulo {
-                font-size: var(--fonte-grande);
+            .hero h2 {
+                font-size: 2em;
             }
-            
-            .produtos-grid {
+
+            .produtos-destaque {
                 grid-template-columns: 1fr;
-                gap: var(--espaco-normal);
             }
-            
-            .hero {
-                padding: var(--espaco-normal);
+
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
             }
         }
     </style>
 </head>
 <body>
-    <header class="cabecalho">
-        <div class="container">
-            <h1 class="logo">Loja Acessível</h1>
-            <nav class="navegacao" aria-label="Menu principal">
-                <ul class="menu-lista">
-                    <li><a href="index.html" class="menu-link ativo">Início</a></li>
-                    <li><a href="catalogo.html" class="menu-link">Catálogo</a></li>
-                    <li><a href="produto.html" class="menu-link">Produto</a></li>
-                    <li><a href="carrinho.html" class="menu-link">Carrinho</a></li>
-                    <li><a href="contato.html" class="menu-link">Contato</a></li>
-                </ul>
-            </nav>
-        </div>
+    <header>
+        <h1>Loja Acessível - Página Inicial</h1>
+        <nav aria-label="Menu principal">
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="catalogo.html">Catálogo</a></li>
+                <li><a href="produto.html">Produto</a></li>
+                <li><a href="carrinho.html">Carrinho</a></li>
+                <li><a href="contato.html">Contato</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <main class="conteudo-principal">
-        <div class="container">
-            <!-- Seção Hero -->
-            <section class="hero" aria-label="Seção principal">
-                <h2 class="hero-titulo">Bem-vindo à Loja Acessível</h2>
-                <p class="hero-texto">Uma experiência de compra eficiente, prática e pensada para todos. Encontre produtos de qualidade para seus pets com os melhores preços!</p>
-            </section>
+    <main>
+        <section class="hero" aria-label="Seção principal">
+            <h2>Bem-vindo à Loja Acessível</h2>
+            <p>Uma experiência de compra eficiente, prática e pensada para todos. Encontre produtos de qualidade para seus pets com os melhores preços!</p>
+        </section>
 
-            <!-- Produtos em Destaque -->
-            <section class="secao" aria-label="Produtos em destaque">
-                <h3 class="secao-titulo texto-centro">Produtos em Destaque</h3>
+        <section class="secao-destaque" aria-label="Produtos em destaque">
+            <h3>Produtos em Destaque</h3>
 
-                <div class="produtos-grid">
-                    <!-- Card Produto 1 -->
-                    <article class="card">
-                        <img src="https://via.placeholder.com/300x200?text=Produto+Incr%C3%ADvel" 
-                             alt="Produto Incrível" 
-                             class="card-imagem">
-                        
-                        <div class="card-cabecalho">
-                            <h4 class="card-titulo">Produto Incrível</h4>
-                        </div>
-                        
-                        <div class="card-corpo">
-                            <p class="card-texto">Descrição do produto incrível que vai resolver todos os seus problemas. Ideal para pets de todos os tamanhos.</p>
-                            
-                            <div class="preco-container" style="margin: var(--espaco-normal) 0;">
-                                <span class="preco" style="font-size: var(--fonte-media); font-weight: var(--fonte-semi-negrito); color: var(--cor-azul);">R$ 149,90</span>
-                            </div>
-                        </div>
-                        
-                        <div class="card-rodape">
-                            <button class="botao botao-azul largura-total" onclick="adicionarAoCarrinho('Produto Incrível', 149.90)">
-                                Adicionar ao Carrinho
-                            </button>
-                        </div>
-                    </article>
+            <div class="produtos-destaque">
+                <article class="card-produto">
+                    <img src="https://via.placeholder.com/300x200?text=Produto+Incr%C3%ADvel" alt="Produto Incrível">
+                    <h4>Produto Incrível</h4>
+                    <p>Descrição do produto incrível que vai resolver todos os seus problemas. Ideal para pets de todos os tamanhos.</p>
+                    <p class="preco">R$ 149,90</p>
+                    <button onclick="adicionarAoCarrinho('Produto Incrível', 149.90)">Adicionar ao Carrinho</button>
+                </article>
 
-                    <!-- Card Produto 2 -->
-                    <article class="card">
-                        <img src="https://via.placeholder.com/300x200?text=Outro+Produto" 
-                             alt="Outro Produto" 
-                             class="card-imagem">
-                        
-                        <div class="card-cabecalho">
-                            <h4 class="card-titulo">Outro Produto</h4>
-                        </div>
-                        
-                        <div class="card-corpo">
-                            <p class="card-texto">Mais um produto fantástico para sua coleção. Perfeito para o cuidado diário do seu animal de estimação.</p>
-                            
-                            <div class="preco-container" style="margin: var(--espaco-normal) 0;">
-                                <span class="preco" style="font-size: var(--fonte-media); font-weight: var(--fonte-semi-negrito); color: var(--cor-azul);">R$ 89,90</span>
-                            </div>
-                        </div>
-                        
-                        <div class="card-rodape">
-                            <button class="botao botao-azul largura-total" onclick="adicionarAoCarrinho('Outro Produto', 89.90)">
-                                Adicionar ao Carrinho
-                            </button>
-                        </div>
-                    </article>
+                <article class="card-produto">
+                    <img src="https://via.placeholder.com/300x200?text=Outro+Produto" alt="Outro Produto">
+                    <h4>Outro Produto</h4>
+                    <p>Mais um produto fantástico para sua coleção. Perfeito para o cuidado diário do seu animal de estimação.</p>
+                    <p class="preco">R$ 89,90</p>
+                    <button onclick="adicionarAoCarrinho('Outro Produto', 89.90)">Adicionar ao Carrinho</button>
+                </article>
 
-                    <!-- Card Produto 3 -->
-                    <article class="card card-destaque">
-                        <img src="https://via.placeholder.com/300x200?text=Super+Produto" 
-                             alt="Super Produto" 
-                             class="card-imagem">
-                        
-                        <div class="card-cabecalho">
-                            <h4 class="card-titulo">Super Produto 
-                                <span class="badge badge-verde" style="margin-left: var(--espaco-mini);">Premium</span>
-                            </h4>
-                        </div>
-                        
-                        <div class="card-corpo">
-                            <p class="card-texto">O melhor produto da nossa loja, com qualidade premium. Desenvolvido especialmente para pets exigentes.</p>
-                            
-                            <div class="preco-container" style="margin: var(--espaco-normal) 0;">
-                                <span class="preco" style="font-size: var(--fonte-media); font-weight: var(--fonte-semi-negrito); color: var(--cor-azul);">R$ 299,90</span>
-                            </div>
-                        </div>
-                        
-                        <div class="card-rodape">
-                            <button class="botao botao-verde largura-total" onclick="adicionarAoCarrinho('Super Produto', 299.90)">
-                                Adicionar ao Carrinho
-                            </button>
-                        </div>
-                    </article>
-                </div>
-            </section>
+                <article class="card-produto">
+                    <img src="https://via.placeholder.com/300x200?text=Super+Produto" alt="Super Produto">
+                    <h4>Super Produto</h4>
+                    <p>O melhor produto da nossa loja, com qualidade premium. Desenvolvido especialmente para pets exigentes.</p>
+                    <p class="preco">R$ 299,90</p>
+                    <button onclick="adicionarAoCarrinho('Super Produto', 299.90)">Adicionar ao Carrinho</button>
+                </article>
+            </div>
+        </section>
 
-            <!-- Seção CTA -->
-            <section class="cta-section" aria-label="Chamada para ação">
-                <h3 class="cta-titulo">Explore Nosso Catálogo Completo</h3>
-                <p class="cta-texto">Descubra centenas de produtos para cães, gatos e muito mais!</p>
-                <a href="catalogo.html" class="botao botao-azul botao-grande">Ver Catálogo Completo</a>
-            </section>
-        </div>
+        <section class="cta-section" aria-label="Chamada para ação">
+            <h3>Explore Nosso Catálogo Completo</h3>
+            <p>Descubra centenas de produtos para cães, gatos e muito mais!</p>
+            <a href="catalogo.html" class="cta-button">Ver Catálogo Completo</a>
+        </section>
     </main>
 
-    <footer class="rodape">
-        <div class="container">
-            <p class="texto-centro">&copy; 2025 Loja Acessível. Todos os direitos reservados.</p>
-            <nav class="navegacao-rodape" aria-label="Links de rodapé">
-                <ul class="menu-lista">
-                    <li><a href="contato.html" class="menu-link">Contato</a></li>
-                    <li><a href="#politica" class="menu-link">Política de Privacidade</a></li>
-                </ul>
-            </nav>
-        </div>
+    <footer>
+        <p>&copy; 2025 Loja Acessível. Todos os direitos reservados.</p>
+        <nav aria-label="Links de rodapé">
+            <ul>
+                <li><a href="contato.html">Contato</a></li>
+                <li><a href="#politica">Política de Privacidade</a></li>
+            </ul>
+        </nav>
     </footer>
 
-    <!-- Área para mostrar mensagens -->
-    <div id="mensagem-container" style="position: fixed; top: 20px; right: 20px; z-index: 1000;"></div>
-
     <script>
-        // Função para adicionar ao carrinho com mensagem visual
+        // Função para adicionar ao carrinho
         function adicionarAoCarrinho(produto, preco) {
-            // Cria mensagem de sucesso
-            const container = document.getElementById('mensagem-container');
-            const alerta = document.createElement('div');
-            alerta.className = 'alerta alerta-sucesso';
-            alerta.innerHTML = `✅ ${produto} foi adicionado ao carrinho por R$ ${preco.toFixed(2)}`;
-            
-            container.appendChild(alerta);
-            
-            // Remove a mensagem após 3 segundos
-            setTimeout(() => {
-                alerta.remove();
-            }, 3000);
-
+            alert(`${produto} foi adicionado ao carrinho por R$ ${preco.toFixed(2)}`);
             // Aqui você pode implementar a lógica real do carrinho
-            console.log(`Produto adicionado: ${produto} - R$ ${preco}`);
         }
 
         // Efeito de entrada suave para os cards
         document.addEventListener('DOMContentLoaded', function() {
-            const cards = document.querySelectorAll('.card');
+            const cards = document.querySelectorAll('.card-produto');
             
             const observer = new IntersectionObserver((entries) => {
-                entries.forEach((entry, index) => {
+                entries.forEach(entry => {
                     if (entry.isIntersecting) {
-                        setTimeout(() => {
-                            entry.target.style.opacity = '1';
-                            entry.target.style.transform = 'translateY(0)';
-                        }, index * 100); // Delay progressivo
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
                     }
                 });
-            }, {
-                threshold: 0.1
             });
 
             cards.forEach(card => {
