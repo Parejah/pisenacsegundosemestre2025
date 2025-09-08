@@ -40,7 +40,7 @@
 .logo {
   font-size: var(--fonte-media);
   font-weight: var(--fonte-negrito);
-  color: var(--cor-azul);
+  color: var(--texto-branco);
 }
 
 /* === NAVEGAÇÃO (menu) === */
