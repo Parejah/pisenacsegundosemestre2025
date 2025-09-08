@@ -1,0 +1,80 @@
+/* Cores - Classes utilitárias para aplicar cores facilmente */
+
+/* === CORES DE TEXTO === */
+.texto-azul { color: var(--cor-azul); }
+.texto-azul-escuro { color: var(--cor-azul-escuro); }
+.texto-verde { color: var(--cor-verde); }
+.texto-verde-escuro { color: var(--cor-verde-escuro); }
+
+.texto-principal { color: var(--texto-escuro); }
+.texto-secundario { color: var(--texto-medio); }
+.texto-claro { color: var(--texto-claro); }
+.texto-branco { color: var(--texto-branco); }
+
+/* Cores de status */
+.texto-sucesso { color: var(--cor-sucesso); }
+.texto-aviso { color: var(--cor-aviso); }
+.texto-erro { color: var(--cor-erro); }
+.texto-info { color: var(--cor-info); }
+
+/* === CORES DE FUNDO === */
+.fundo-branco { background-color: var(--fundo-branco); }
+.fundo-cinza { background-color: var(--fundo-cinza); }
+.fundo-escuro { background-color: var(--fundo-escuro); }
+
+.fundo-azul { background-color: var(--cor-azul); }
+.fundo-azul-claro { background-color: var(--cor-azul-claro); }
+.fundo-verde { background-color: var(--cor-verde); }
+.fundo-verde-claro { background-color: var(--cor-verde-claro); }
+
+/* Fundos de status */
+.fundo-sucesso { background-color: var(--cor-sucesso); }
+.fundo-aviso { background-color: var(--cor-aviso); }
+.fundo-erro { background-color: var(--cor-erro); }
+.fundo-info { background-color: var(--cor-info); }
+
+/* Fundos claros para mensagens */
+.fundo-sucesso-claro { 
+  background-color: #d1fae5; 
+  color: #065f46; 
+}
+.fundo-aviso-claro { 
+  background-color: #fef3c7; 
+  color: #92400e; 
+}
+.fundo-erro-claro { 
+  background-color: #fee2e2; 
+  color: #991b1b; 
+}
+.fundo-info-claro { 
+  background-color: #dbeafe; 
+  color: #1e40af; 
+}
+
+/* === BORDAS === */
+.borda { border: 1px solid var(--cinza-medio-claro); }
+.borda-azul { border-color: var(--cor-azul); }
+.borda-verde { border-color: var(--cor-verde); }
+.borda-cinza { border-color: var(--cinza-medio); }
+
+/* Espessuras de borda */
+.borda-fina { border-width: 1px; }
+.borda-media { border-width: 2px; }
+.borda-grossa { border-width: 4px; }
+
+/* Bordas arredondadas */
+.borda-pequena { border-radius: var(--borda-pequena); }
+.borda-normal { border-radius: var(--borda-normal); }
+.borda-grande { border-radius: var(--borda-grande); }
+.borda-redonda { border-radius: 50%; } /* Para fazer círculos */
+
+/* === SOMBRAS === */
+.sombra-pequena { box-shadow: var(--sombra-pequena); }
+.sombra-media { box-shadow: var(--sombra-media); }
+.sombra-grande { box-shadow: var(--sombra-grande); }
+
+/* Sombra especial para hover */
+.sombra-hover:hover {
+  box-shadow: var(--sombra-grande);
+  transition: var(--transicao-normal);
+}
