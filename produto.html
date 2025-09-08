@@ -3,209 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Produto - Loja Acessível</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: Arial, sans-serif;
-            max-width: 1200px;
-            margin: auto;
-            line-height: 1.6;
-        }
-
-        header, footer {
-            background-color: #0097A7;
-            color: white;
-            padding: 1em;
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 1em;
-            padding: 0;
-        }
-
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-        }
-
-        nav ul li a:hover {
-            text-decoration: underline;
-        }
-
-        main {
-            padding: 2em 1em;
-        }
-
-        .produto-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2em;
-            margin-bottom: 2em;
-        }
-
-        .produto-imagem img {
-            width: 100%;
-            max-width: 400px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        }
-
-        .produto-info h1 {
-            color: #333;
-            margin-bottom: 1em;
-        }
-
-        .preco {
-            font-size: 2em;
-            color: #0097A7;
-            font-weight: bold;
-            margin-bottom: 1em;
-        }
-
-        .descricao {
-            margin-bottom: 2em;
-            color: #666;
-        }
-
-        .opcoes {
-            margin-bottom: 2em;
-        }
-
-        .opcoes label {
-            display: block;
-            margin-bottom: 0.5em;
-            font-weight: bold;
-        }
-
-        .opcoes select, .opcoes input {
-            width: 100%;
-            padding: 0.5em;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            margin-bottom: 1em;
-        }
-
-        .botoes {
-            display: flex;
-            gap: 1em;
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            padding: 1em 2em;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 1em;
-            text-decoration: none;
-            text-align: center;
-            transition: background-color 0.3s;
-        }
-
-        .btn-primary {
-            background-color: #0097A7;
-            color: white;
-        }
-
-        .btn-primary:hover {
-            background-color: #007d8a;
-        }
-
-        .btn-secondary {
-            background-color: #f0f0f0;
-            color: #333;
-        }
-
-        .btn-secondary:hover {
-            background-color: #e0e0e0;
-        }
-
-        .especificacoes {
-            margin-top: 2em;
-            padding: 1em;
-            background-color: #f9f9f9;
-            border-radius: 8px;
-        }
-
-        .especificacoes h3 {
-            margin-bottom: 1em;
-            color: #333;
-        }
-
-        .especificacoes ul {
-            list-style-type: disc;
-            margin-left: 2em;
-        }
-
-        .especificacoes li {
-            margin-bottom: 0.5em;
-        }
-
-        .produtos-relacionados {
-            margin-top: 3em;
-        }
-
-        .produtos-relacionados h3 {
-            margin-bottom: 1em;
-            color: #333;
-        }
-
-        .grid-relacionados {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1em;
-        }
-
-        .card-relacionado {
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            padding: 1em;
-            text-align: center;
-            background-color: #f9f9f9;
-        }
-
-        .card-relacionado img {
-            width: 100%;
-            height: 150px;
-            object-fit: cover;
-            border-radius: 4px;
-            margin-bottom: 0.5em;
-        }
-
-        .breadcrumb {
-            margin-bottom: 1em;
-            color: #666;
-        }
-
-        .breadcrumb a {
-            color: #0097A7;
-            text-decoration: none;
-        }
-
-        .breadcrumb a:hover {
-            text-decoration: underline;
-        }
-
-        @media (max-width: 768px) {
-            .produto-container {
-                grid-template-columns: 1fr;
-            }
-            
-            .botoes {
-                flex-direction: column;
-            }
-        }
-    </style>
+    <title>Detalhes do Produto - Loja Acessível</title>
+    <!-- CSS Principal -->
+    <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
+    <!-- CABEÇALHO -->
     <header>
         <h1>Loja Acessível</h1>
         <nav aria-label="Menu principal">
@@ -219,90 +22,62 @@
         </nav>
     </header>
 
-    <main>
-        <nav class="breadcrumb" aria-label="Navegação estrutural">
-            <a href="index.html">Início</a> > 
-            <a href="catalogo.html">Catálogo</a> > 
-            <span>Brinquedo para Cães</span>
-        </nav>
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main class="conteudo-principal">
+        <section class="secao">
+            <div class="container linha">
+                <!-- Imagem do Produto -->
+                <div class="coluna coluna-tablet-metade">
+                    <img src="https://via.placeholder.com/500x400" alt="Imagem do Produto Exemplo">
+                </div>
 
-        <div class="produto-container">
-            <div class="produto-imagem">
-                <img src="https://via.placeholder.com/400x400?text=Brinquedo+para+Cães" alt="Brinquedo interativo para cães de todas as idades">
+                <!-- Detalhes do Produto -->
+                <div class="coluna coluna-tablet-metade">
+                    <h2 class="titulo-secao">Produto Exemplo</h2>
+                    <p>Descrição detalhada do produto exemplo. Aqui você pode colocar informações sobre material, tamanho, benefícios e diferenciais.</p>
+                    
+                    <div class="preco-produto">
+                        <span class="preco-antigo">R$ 299,90</span>
+                        <span class="preco-novo">R$ 249,90</span>
+                    </div>
+                    
+                    <button class="botao botao-verde botao-grande" onclick="adicionarAoCarrinho('Produto Exemplo', 249.90)">Adicionar ao Carrinho</button>
+                </div>
             </div>
+        </section>
 
-            <div class="produto-info">
-                <h1>Brinquedo Interativo para Cães</h1>
-                <div class="preco">R$ 29,90</div>
+        <!-- PRODUTOS RELACIONADOS -->
+        <section class="secao">
+            <div class="container">
+                <h2 class="titulo-secao">Produtos Relacionados</h2>
                 
-                <div class="descricao">
-                    <p>Brinquedo resistente e seguro, perfeito para estimular a mente do seu pet. Feito com materiais atóxicos e duráveis, proporciona horas de diversão para cães de todos os tamanhos.</p>
-                </div>
+                <div class="grade-produtos">
+                    <div class="card card-produto">
+                        <img src="https://via.placeholder.com/250x200" alt="Produto Relacionado 1">
+                        <h3>Produto Relacionado 1</h3>
+                        <p>R$ 199,90</p>
+                        <button class="botao botao-azul" onclick="adicionarAoCarrinho('Produto Relacionado 1', 199.90)">Adicionar</button>
+                    </div>
 
-                <div class="opcoes">
-                    <label for="tamanho">Tamanho:</label>
-                    <select id="tamanho" name="tamanho">
-                        <option value="pequeno">Pequeno</option>
-                        <option value="medio" selected>Médio</option>
-                        <option value="grande">Grande</option>
-                    </select>
+                    <div class="card card-produto">
+                        <img src="https://via.placeholder.com/250x200" alt="Produto Relacionado 2">
+                        <h3>Produto Relacionado 2</h3>
+                        <p>R$ 99,90</p>
+                        <button class="botao botao-azul" onclick="adicionarAoCarrinho('Produto Relacionado 2', 99.90)">Adicionar</button>
+                    </div>
 
-                    <label for="cor">Cor:</label>
-                    <select id="cor" name="cor">
-                        <option value="azul" selected>Azul</option>
-                        <option value="vermelho">Vermelho</option>
-                        <option value="verde">Verde</option>
-                    </select>
-
-                    <label for="quantidade">Quantidade:</label>
-                    <input type="number" id="quantidade" name="quantidade" min="1" max="10" value="1">
-                </div>
-
-                <div class="botoes">
-                    <button class="btn btn-primary" onclick="adicionarAoCarrinho()">
-                        Adicionar ao Carrinho
-                    </button>
-                    <button class="btn btn-secondary" onclick="comprarAgora()">
-                        Comprar Agora
-                    </button>
+                    <div class="card card-produto">
+                        <img src="https://via.placeholder.com/250x200" alt="Produto Relacionado 3">
+                        <h3>Produto Relacionado 3</h3>
+                        <p>R$ 149,90</p>
+                        <button class="botao botao-azul" onclick="adicionarAoCarrinho('Produto Relacionado 3', 149.90)">Adicionar</button>
+                    </div>
                 </div>
             </div>
-        </div>
-
-        <div class="especificacoes">
-            <h3>Especificações do Produto</h3>
-            <ul>
-                <li><strong>Material:</strong> Borracha natural atóxica</li>
-                <li><strong>Dimensões:</strong> 15cm x 10cm x 8cm</li>
-                <li><strong>Peso:</strong> 150g</li>
-                <li><strong>Idade recomendada:</strong> A partir de 3 meses</li>
-                <li><strong>Cuidados:</strong> Lavar com água e sabão neutro</li>
-                <li><strong>Garantia:</strong> 6 meses contra defeitos de fabricação</li>
-            </ul>
-        </div>
-
-        <div class="produtos-relacionados">
-            <h3>Produtos Relacionados</h3>
-            <div class="grid-relacionados">
-                <div class="card-relacionado">
-                    <img src="https://via.placeholder.com/200x150?text=Coleira" alt="Coleira para cães">
-                    <h4>Coleira Colorida</h4>
-                    <p>R$ 19,90</p>
-                </div>
-                <div class="card-relacionado">
-                    <img src="https://via.placeholder.com/200x150?text=Ração" alt="Ração premium">
-                    <h4>Ração Premium</h4>
-                    <p>R$ 89,90</p>
-                </div>
-                <div class="card-relacionado">
-                    <img src="https://via.placeholder.com/200x150?text=Petisco" alt="Petisco para cães">
-                    <h4>Petisco Natural</h4>
-                    <p>R$ 15,90</p>
-                </div>
-            </div>
-        </div>
+        </section>
     </main>
 
+    <!-- RODAPÉ -->
     <footer>
         <p>&copy; 2025 Loja Acessível. Todos os direitos reservados.</p>
         <nav aria-label="Links de rodapé">
@@ -313,21 +88,11 @@
         </nav>
     </footer>
 
+    <!-- SCRIPT -->
     <script>
-        function adicionarAoCarrinho() {
-            const tamanho = document.getElementById('tamanho').value;
-            const cor = document.getElementById('cor').value;
-            const quantidade = document.getElementById('quantidade').value;
-            
-            alert(`Produto adicionado ao carrinho!\nTamanho: ${tamanho}\nCor: ${cor}\nQuantidade: ${quantidade}`);
-        }
-
-        function comprarAgora() {
-            const tamanho = document.getElementById('tamanho').value;
-            const cor = document.getElementById('cor').value;
-            const quantidade = document.getElementById('quantidade').value;
-            
-            alert(`Redirecionando para checkout...\nTamanho: ${tamanho}\nCor: ${cor}\nQuantidade: ${quantidade}`);
+        function adicionarAoCarrinho(produto, preco) {
+            alert(`${produto} foi adicionado ao carrinho por R$ ${preco.toFixed(2)}`);
+            // Depois vamos trocar por lógica real usando localStorage
         }
     </script>
 </body>
