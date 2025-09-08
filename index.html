@@ -4,22 +4,101 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Loja Acessível - Página Inicial</title>
-    <!-- CSS Principal -->
+ <!-- CSS Principal (importa todos os outros) -->
     <link rel="stylesheet" href="css/main.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1200px;
+            margin: auto;
+            line-height: 1.6;
+        }
+
+        header, footer {
+            background-color: #0097A7;
+            color: white;
+            padding: 1em;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 1em;
+            padding: 0;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        .banner, .promocoes, .grid-produtos {
+            margin: 1em 0;
+        }
+
+        .banner-item, .card-produto {
+            border: 1px solid #ccc;
+            padding: 1em;
+            margin: 0.5em;
+        }
+
+        .grid-produtos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1em;
+        }
+
+        .card-produto {
+            text-align: center;
+            background-color: #f9f9f9;
+        }
+
+        .card-produto img {
+            max-width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .intro {
+            text-align: center;
+            margin: 2em 0;
+        }
+
+        .banner {
+            background-color: #f0f8ff;
+            padding: 2em;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
     <!-- CABEÇALHO -->
-    <header>
-        <h1>Loja Acessível</h1>
-        <nav aria-label="Menu principal">
-            <ul>
-                <li><a href="index.html">Início</a></li>
-                <li><a href="catalogo.html">Catálogo</a></li>
-                <li><a href="produto.html">Produto</a></li>
-                <li><a href="carrinho.html">Carrinho</a></li>
-                <li><a href="contato.html">Contato</a></li>
-            </ul>
-        </nav>
+    <header class="cabecalho">
+        <div class="container">
+            <div class="logo">Minha Loja</div>
+            
+            <!-- Botão do menu mobile (só aparece no celular) -->
+            <button class="botao-menu">☰</button>
+            
+            <!-- Menu normal -->
+            <nav class="navegacao">
+                <a href="#" class="link-navegacao">Início</a>
+                <a href="#" class="link-navegacao">Produtos</a>
+                <a href="#" class="link-navegacao">Sobre</a>
+                <a href="#" class="link-navegacao">Contato</a>
+            </nav>
+        </div>
     </header>
 
     <!-- SEÇÃO HERO (DESTAQUE) -->
@@ -27,7 +106,7 @@
         <div class="container">
             <h1 class="hero-titulo">Bem-vindo à Nossa Loja</h1>
             <p class="hero-subtitulo">Os melhores produtos com qualidade garantida</p>
-            <a href="catalogo.html" class="botao botao-verde botao-grande">Ver Produtos</a>
+            <a href="#produtos" class="botao botao-verde botao-grande">Ver Produtos</a>
         </div>
     </section>
 
@@ -38,6 +117,7 @@
             <section class="secao" id="produtos">
                 <h2 class="titulo-secao">Nossos Produtos</h2>
                 
+                <!-- Grade de produtos -->
                 <div class="grade-produtos">
                     <!-- Card de produto 1 -->
                     <div class="card card-produto">
@@ -127,14 +207,10 @@
     </main>
 
     <!-- RODAPÉ -->
-    <footer>
-        <p>&copy; 2025 Loja Acessível. Todos os direitos reservados.</p>
-        <nav aria-label="Links de rodapé">
-            <ul>
-                <li><a href="contato.html">Contato</a></li>
-                <li><a href="#politica">Política de Privacidade</a></li>
-            </ul>
-        </nav>
+    <footer class="rodape">
+        <div class="container">
+            <p>&copy; 2024 Minha Loja. Todos os direitos reservados.</p>
+        </div>
     </footer>
 </body>
-</html>
+</html> 
