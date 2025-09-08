@@ -1,0 +1,136 @@
+/* Layout - Como os elementos se organizam na página */
+
+/* === CONTAINER (caixa principal que centraliza o conteúdo) === */
+.container {
+  width: 100%;
+  max-width: var(--container-celular); /* Usa a variável que criamos */
+  margin: 0 auto; /* Centraliza na página */
+  padding: 0 var(--espaco-normal); /* Espaçamento nas laterais */
+}
+
+/* === SISTEMA DE COLUNAS === */
+/* Linha que vai conter as colunas */
+.linha {
+  display: flex; /* Coloca os elementos lado a lado */
+  flex-wrap: wrap; /* Permite quebrar linha se necessário */
+  margin: 0 -8px; /* Compensa o espaçamento das colunas */
+}
+
+/* Coluna básica */
+.coluna {
+  flex: 1; /* Ocupa o espaço disponível */
+  padding: 0 8px; /* Espaçamento entre colunas */
+}
+
+/* Colunas com tamanhos específicos */
+.coluna-inteira { flex: 0 0 100%; } /* Ocupa a linha toda */
+.coluna-metade { flex: 0 0 50%; }   /* Ocupa metade da linha */
+.coluna-um-terco { flex: 0 0 33.333%; } /* Um terço da linha */
+.coluna-quarto { flex: 0 0 25%; }   /* Um quarto da linha */
+
+/* === HEADER (cabeçalho do site) === */
+.cabecalho {
+  display: flex;
+  justify-content: space-between; /* Logo à esquerda, menu à direita */
+  align-items: center; /* Alinha no centro verticalmente */
+  padding: var(--espaco-normal) 0;
+  border-bottom: 1px solid var(--cinza-medio-claro);
+}
+
+.logo {
+  font-size: var(--fonte-media);
+  font-weight: var(--fonte-negrito);
+  color: var(--cor-azul);
+}
+
+/* === NAVEGAÇÃO (menu) === */
+.navegacao {
+  display: flex;
+  gap: var(--espaco-medio); /* Espaçamento entre os links */
+}
+
+.link-navegacao {
+  color: var(--texto-escuro);
+  font-weight: var(--fonte-media-peso);
+  transition: var(--transicao-normal);
+}
+
+.link-navegacao:hover {
+  color: var(--cor-azul);
+}
+
+/* === CONTEÚDO PRINCIPAL === */
+.conteudo-principal {
+  min-height: 70vh; /* Ocupa pelo menos 70% da altura da tela */
+  padding: var(--espaco-grande) 0;
+}
+
+/* === SEÇÕES === */
+.secao {
+  padding: var(--espaco-grande) 0;
+}
+
+.titulo-secao {
+  font-size: var(--fonte-titulo);
+  font-weight: var(--fonte-negrito);
+  text-align: center;
+  margin-bottom: var(--espaco-medio);
+  color: var(--texto-escuro);
+}
+
+/* === RODAPÉ === */
+.rodape {
+  background-color: var(--fundo-escuro);
+  color: var(--texto-branco);
+  text-align: center;
+  padding: var(--espaco-grande) 0;
+  margin-top: var(--espaco-gigante);
+}
+
+/* === RESPONSIVIDADE - TABLET (768px para cima) === */
+@media (min-width: 768px) {
+  /* Container maior para tablets */
+  .container {
+    max-width: var(--container-tablet);
+    padding: 0 var(--espaco-medio);
+  }
+  
+  /* Seções com mais espaçamento */
+  .secao {
+    padding: var(--espaco-gigante) 0;
+  }
+  
+  /* Colunas específicas para tablet */
+  .coluna-tablet-metade { flex: 0 0 50%; }
+  .coluna-tablet-um-terco { flex: 0 0 33.333%; }
+}
+
+/* === RESPONSIVIDADE - DESKTOP (1024px para cima) === */
+@media (min-width: 1024px) {
+  /* Container maior para desktop */
+  .container {
+    max-width: var(--container-desktop);
+  }
+  
+  /* Navegação horizontal sempre visível */
+  .navegacao {
+    display: flex; /* Sempre mostra o menu */
+  }
+  
+  /* Colunas específicas para desktop */
+  .coluna-desktop-quarto { flex: 0 0 25%; }
+  .coluna-desktop-um-terco { flex: 0 0 33.333%; }
+  .coluna-desktop-metade { flex: 0 0 50%; }
+}
+
+/* === RESPONSIVIDADE - DESKTOP GRANDE (1200px para cima) === */
+@media (min-width: 1200px) {
+  .container {
+    max-width: var(--container-grande);
+  }
+  
+  /* Títulos maiores em telas grandes */
+  .titulo-secao {
+    font-size: var(--fonte-super-titulo);
+  }
+}

@@ -1,0 +1,54 @@
+/* Arquivo Principal CSS - Importa todos os outros arquivos */
+
+/* IMPORTANTE: A ordem dos imports importa! */
+
+/* 1. Reset primeiro (limpa estilos do navegador) */
+@import 'reset.css';
+
+/* 2. Variáveis (definições que outros arquivos vão usar) */
+@import 'variaveis.css';
+
+/* 3. Layout base (containers, grid) */
+@import 'layout.css';
+
+/* 4. Tipografia (fontes, textos) */
+@import 'tipografia.css';
+
+/* 5. Sistema de cores */
+@import 'cores.css';
+
+/* 6. Componentes (botões, cards, etc.) */
+@import 'componentes.css';
+
+/* 7. Responsividade por último (pode sobrescrever outros estilos) */
+@import 'responsivo.css';
+
+/* === ESTILOS ESPECÍFICOS DA PÁGINA === */
+/* Aqui você pode adicionar estilos únicos que não se encaixam nos outros arquivos */
+
+/* Exemplo: estilo especial para a homepage */
+.hero-secao {
+  background: linear-gradient(135deg, var(--cor-azul), var(--cor-verde));
+  color: var(--texto-branco);
+  text-align: center;
+  padding: calc(var(--espaco-gigante) * 2) 0;
+}
+
+.hero-titulo {
+  font-size: var(--fonte-super-titulo);
+  font-weight: var(--fonte-negrito);
+  margin-bottom: var(--espaco-normal);
+}
+
+.hero-subtitulo {
+  font-size: var(--fonte-media);
+  margin-bottom: var(--espaco-grande);
+  opacity: 0.9;
+}
+
+/* Responsividade para o hero */
+@media (min-width: 768px) {
+  .hero-titulo {
+    font-size: 4rem;
+  }
+}   
